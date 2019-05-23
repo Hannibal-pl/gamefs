@@ -1,0 +1,12 @@
+ - gob_stk, cf_dat, fall_dat and ta_hapi decompression methods aren't
+   proven to be 100% correct.
+
+ - Some archives have multiple entries by this same name - they are ignored.
+   This isn't probably correct behaviour.
+
+ - ja2_slf have on workaround file witch masks dir
+
+ - gta3_img size of file is always aligned to 0x800 due to lack of information
+   about exactly size
+
+ - artifex_cub - files > 4GiB are not supported
