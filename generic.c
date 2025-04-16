@@ -7,7 +7,7 @@
 #include <time.h>
 #include <zlib.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 struct filesystem filesystem;
 struct filesystem *fs = &filesystem;

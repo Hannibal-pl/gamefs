@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_arch_canon_fw(void) {
 	unsigned count;

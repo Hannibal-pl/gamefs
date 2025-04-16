@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 struct dir {
 	struct filenode *dir;

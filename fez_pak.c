@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_game_fez_pak(void) {
 	unsigned count;
@@ -18,12 +18,7 @@ int init_game_fez_pak(void) {
 		memset(name, 0, sizeof(name));
 		fread(&nsize, 1, sizeof(nsize), fs->file);
 		fread(name, 1, nsize, fs->file);
-
-		for (int j = 0; j < strlen(name); j++) {
-			if (name[j] == '\\') {
-				name[j] = '/';
-			}
-		}
+		pathDosToUnix(name, strlen(name));
 
 		node = generic_add_path(fs->root, name, FILETYPE_REGULAR);
 		if (!node) {

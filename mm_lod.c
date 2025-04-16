@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_game_mm_lod(void) {
 	unsigned count;

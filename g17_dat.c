@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_game_g17_dat(void) {
 	unsigned count;
@@ -22,11 +22,7 @@ int init_game_g17_dat(void) {
 		fread(&size, sizeof(unsigned), 1, fs->file);
 		fseek(fs->file, sizeof(unsigned) * 2, SEEK_CUR);
 		fread(path, 1, sizeof(path) - 1, fs->file);
-		for (int j = 0; j < strlen(path); j++) {
-			if (path[j] == '\\') {
-				path[j] = '/';
-			}
-		}
+		pathDosToUnix(path, strlen(path));
 		node = generic_add_path(fs->root, path, FILETYPE_REGULAR);
 		if (!node) {
 			if (errno == -EEXIST) { //ignore duplicates

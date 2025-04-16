@@ -6,7 +6,6 @@
 #include <syslog.h>
 
 #include "gamefs.h"
-#include "generic.h"
 #include "modules.h"
 
 #define GAMEFS_OPT_KEY(t, p, v) { t, offsetof(struct options, p), v }

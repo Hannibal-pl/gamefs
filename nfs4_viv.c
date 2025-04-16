@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <endian.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_game_nfs4_viv(void) {
 	unsigned count;

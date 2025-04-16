@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_game_gta3_img(void) {
 	unsigned count;

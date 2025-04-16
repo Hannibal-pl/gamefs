@@ -5,7 +5,7 @@
 #include <pthread.h>
 #include <syslog.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 #define LEAF_COUNT 314
 #define TREE_SIZE ((LEAF_COUNT << 1) - 1)

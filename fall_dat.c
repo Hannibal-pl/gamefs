@@ -5,7 +5,7 @@
 #include <pthread.h>
 #include <syslog.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 struct filenode **dirs;
 
@@ -147,11 +147,7 @@ int init_game_fall_dat(void) {
 		if (!strcmp(path, ".")) {
 			dirs[i] = fs->root;
 		} else {
-			for (int j = 0; j < slen; j++) {
-				if (path[j] == '\\') {
-					path[j] = '/';
-				}
-			}
+			pathDosToUnix(path, slen);
 			dirs[i] = generic_add_path(fs->root, path, FILETYPE_DIR);
 			if (!dirs[i]) {
 				fprintf(stderr, "Error adding file desciption to library.\n");

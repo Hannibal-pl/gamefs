@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_game_ja2_slf(void) {
 	unsigned short count;
@@ -23,11 +23,7 @@ int init_game_ja2_slf(void) {
 	for (int i = 0; i < (count - 1); i++) {
 		memset(path, 0, sizeof(path));
 		fread(path, 1, sizeof(path) - 1, fs->file);
-		for (int j = 0; j < strlen(path); j++) {
-			if (path[j] == '\\') {
-				path[j] = '/';
-			}
-		}
+		pathDosToUnix(path, strlen(path));
 		printf("%s\n", path);
 		if (!strcmp(path, "26/T")) { //broken file workaround
 			fseek(fs->file, sizeof(unsigned) * 6, SEEK_CUR);

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_game_fall2_dat(void) {
 	unsigned offset;
@@ -32,11 +32,8 @@ int init_game_fall2_dat(void) {
 			return -ENAMETOOLONG;
 		}
 		fread(path, fnsize, 1, fs->file);
-		for (int j = 0; j < fnsize; j++) {
-			if (path[j] == '\\') {
-				path[j] = '/';
-			}
-		}
+		pathDosToUnix(path, fnsize);
+
 		fread(&tmp, sizeof(unsigned char), 1, fs->file);
 
 		if (tmp == 1) {

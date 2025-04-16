@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int comm_dir_rec_init(struct filenode *tdir, unsigned doff) {
 	unsigned cur;

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int init_game_anox_dat(void) {
 	uint32_t count;
@@ -29,12 +29,7 @@ int init_game_anox_dat(void) {
 	for (int i = 0; i < count; i++) {
 		memset(name, 0, sizeof(name));
 		fread(name, 128, 1, fs->file);
-
-		for (int j = 0; j < strlen(name); j++) {
-			if (name[j] == '\\') {
-				name[j] = '/';
-			}
-		}
+		pathDosToUnix(name, strlen(name));
 
 		fread(&offset, sizeof(uint32_t), 1, fs->file);
 		fread(&size, sizeof(uint32_t), 1, fs->file);

@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <errno.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 int add_dir(struct filenode *pnode, uint32_t count) {
 	uint32_t subcount;

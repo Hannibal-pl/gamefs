@@ -4,7 +4,7 @@
 #include <errno.h>
 #include <zlib.h>
 
-#include "generic.h"
+#include "gamefs.h"
 
 struct private {
 	unsigned cluster_size;

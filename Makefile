@@ -7,16 +7,16 @@ GAMEMOD = mm_vid.o lfosh_lib.o arc_dat.o fall2_dat.o fragall__.o mm_lod.o sc2000
           comm_dir.o ufoamh_vfs.o ja2_slf.o dk_dat.o fall_dat.o gta3_img.o ult7_dat.o aod_dat.o \
           sforce_pak.o nfs4_viv.o ftl_dat.o ta_hapi.o artifex_cub.o fez_pak.o mm_snd.o canon_fw.o \
           risen_pak.o anox_dat.o ss_res.o
-BASEMOD = gamefs.o generic.o
+BASEMOD = gamefs.o generic.o tools.o
 
 all: gamefs
 
 gamefs.o: modules.h
 
-$(BASEMOD): %.o: %.c  generic.h gamefs.h
+$(BASEMOD): %.o: %.c gamefs.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-$(GAMEMOD): %.o: %.c  generic.h gamefs.h
+$(GAMEMOD): %.o: %.c gamefs.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 gamefs: $(BASEMOD) $(GAMEMOD)
