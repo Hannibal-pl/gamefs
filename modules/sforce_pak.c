@@ -4,18 +4,6 @@
 
 #include "../gamefs.h"
 
-char * strrev(char *str) {
-	char tmp;
-	int len = strlen(str);
-	for (int i = 0; i < (len / 2); i++) {
-		tmp = str[len - 1 - i];
-		str[len - 1 - i] = str[i];
-		str[i] = tmp;
-	}
-
-	return str;
-}
-
 int init_game_sforce_pak(void) {
 	unsigned count;
 	unsigned nbase;
@@ -44,7 +32,7 @@ int init_game_sforce_pak(void) {
 		memset(name, 0, sizeof(name));
 		fseek(fs->file, nbase + (offset & 0xFFFFFF), SEEK_SET);
 		fgets(name, sizeof(name), fs->file);
-		strrev(name);
+		strrev(name, strlen(name));
 
 		node = generic_add_file(fs->root, name, FILETYPE_REGULAR);
 		if (!node) {

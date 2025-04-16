@@ -113,5 +113,6 @@ extern void generic_closefs(void);
 
 //tools
 extern void pathDosToUnix(char *path, uint32_t len);
+extern void strrev(char *str, uint32_t len);
 
 #endif
