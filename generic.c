@@ -198,6 +198,8 @@ struct filenode * generic_add_file(struct filenode *node, const char *file, unsi
 	new_filenode->parent = node;
 	new_filenode->size = 0;
 	new_filenode->atime = filesystem.stat.st_atime;
+	new_filenode->mtime = filesystem.stat.st_mtime;
+	new_filenode->ctime = filesystem.stat.st_ctime;
 	strncpy(new_filenode->name, file, MAX_FILENAME);
 
 	if (generic_is_dir(new_filenode)) {
@@ -306,8 +308,8 @@ int generic_fo_getattr(const char *path, struct stat *stbuf) {
 	stbuf->st_nlink = node->links;
 	stbuf->st_size = (long long)node->size;
 	stbuf->st_atime = node->atime;
-	stbuf->st_mtime = filesystem.stat.st_mtime;
-	stbuf->st_ctime = filesystem.stat.st_ctime;
+	stbuf->st_mtime = node->mtime;
+	stbuf->st_ctime = node->ctime;
 	return 0;
 }
 

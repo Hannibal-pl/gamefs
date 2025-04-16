@@ -26,6 +26,7 @@ enum {
 struct options {
 	char* game;
 	char* file;
+	char* param;
 };
 
 struct filenode;
@@ -49,6 +50,8 @@ struct filenode {
 	unsigned flags;
 	struct filenode *parent;
 	time_t atime;
+	time_t mtime;
+	time_t ctime;
 	union {
 		struct {
 			unsigned alloced;

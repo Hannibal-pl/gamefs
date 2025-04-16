@@ -19,6 +19,8 @@ enum {
 static struct fuse_opt gamefs_opts[] = {
 	GAMEFS_OPT_KEY("game=%s", game, 0),
 	GAMEFS_OPT_KEY("--game %s", game, 0),
+	GAMEFS_OPT_KEY("param=%s", param, 0),
+	GAMEFS_OPT_KEY("--param %s", param, 0),
 	GAMEFS_OPT_KEY("file=%s", file, 0),
 	GAMEFS_OPT_KEY("--file %s", file, 0),
 	FUSE_OPT_END
@@ -31,6 +33,7 @@ static struct gametable gametable[] = {
 	{"artifex_cub", "Artifex Mundi Games *.cub files", init_game_artifex_cub},
 	{"bs_rarc", "Broken Sword Director's Cut RARC *.dat files", init_game_bs_rarc},
 	{"cf_dat", "Cannon Fodder *.dat files", init_game_cf_dat},
+	{"canon_fw", "Cannon printer firmware files", init_game_canon_fw},
 	{"comm_dir", "Commandos *.dir files", init_game_comm_dir},
 	{"dune2_pak", "Dune 2 *.pak files", init_game_dune2_pak},
 	{"dk_dat", "Dungeon Keeper *.dat files", init_game_dk_dat},
@@ -46,8 +49,10 @@ static struct gametable gametable[] = {
 	{"ja2_slf", "Jagged Alliance *.slf files", init_game_ja2_slf},
 	{"lfosh_lib", "Lost Files of Sherlock Holmes *.lib files", init_game_lfosh_lib},
 	{"mm_lod", "Might&Magic VI-VIII *.lod files", init_game_mm_lod},
+	{"mm_snd", "Might&Magic VI-VIII *.snd files", init_game_mm_snd},
 	{"mm_vid", "Might&Magic VI-VIII *.vid files", init_game_mm_vid},
 	{"nfs4_viv", "Need for Speed 4 *.viv files", init_game_nfs4_viv},
+	{"risen_pak", "Risen *.pak files", init_game_risen_pak},
 	{"sc2000_dat", "SimCity 2000 *.dat files", init_game_sc2000_dat},
 	{"sforce_pak", "Spellforce *.pak files", init_game_sforce_pak},
 	{"ta_hapi", "Total Anihilation HAPI files", init_game_ta_hapi},
@@ -96,7 +101,7 @@ int main(int argc, char *argv[]) {
 		return -EINVAL;
 	} else {
 		printf("You must choose game file type.\n");
-		printf("Usage:\n\t%s --game [GAME_TYPE] --file [ARCHIVE_FILE] [MOUNT_POINT]\n", argv[0]);
+		printf("Usage:\n\t%s --game [GAME_TYPE] --file [ARCHIVE_FILE] [--param OPTIONAL_PARAMETER] [MOUNT_POINT]\n", argv[0]);
 		help();
 		return -EINVAL;
 	}

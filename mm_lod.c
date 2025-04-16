@@ -45,6 +45,7 @@ int init_game_mm_lod(void) {
 		}
 
 		fread(&node->offset, sizeof(unsigned), 1, fs->file);
+		node->offset += 0x120;
 		fread(&node->size, sizeof(unsigned), 1, fs->file);
 		fseek(fs->file, sizeof(unsigned) * 2, SEEK_CUR);
 	}

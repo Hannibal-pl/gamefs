@@ -31,5 +31,8 @@
 #include "ta_hapi.h"
 #include "artifex_cub.h"
 #include "fez_pak.h"
+#include "mm_snd.h"
+#include "canon_fw.h"
+#include "risen_pak.h"
 
 #endif
