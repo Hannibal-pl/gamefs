@@ -17,6 +17,8 @@
 #define MAX_GAMETYPE 32
 #define MAX_DESC 256
 
+#define INFLATE_CHUNK 4096
+
 enum {
 	FILETYPE_EMPTY = 0,
 	FILETYPE_REGULAR = 1,
@@ -114,5 +116,6 @@ extern void generic_closefs(void);
 //tools
 extern void pathDosToUnix(char *path, uint32_t len);
 extern void strrev(char *str, uint32_t len);
+extern bool unpackSizeless(uint8_t *in, uint32_t insize, uint8_t **out, uint32_t *outsize);
 
 #endif
