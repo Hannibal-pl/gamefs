@@ -34,7 +34,6 @@ static struct gametable gametable[] = {
 	{"artifex_cub", "Artifex Mundi Games *.cub files", init_game_artifex_cub},
 	{"bs_rarc", "Broken Sword Director's Cut RARC *.dat files", init_game_bs_rarc},
 	{"cf_dat", "Cannon Fodder *.dat files", init_game_cf_dat},
-	{"canon_fw", "Cannon printer firmware files", init_arch_canon_fw},
 	{"comm_dir", "Commandos *.dir files", init_game_comm_dir},
 	{"dune2_pak", "Dune 2 *.pak files", init_game_dune2_pak},
 	{"dk_dat", "Dungeon Keeper *.dat files", init_game_dk_dat},
@@ -65,11 +64,21 @@ static struct gametable gametable[] = {
 	{"", "", NULL}
 };
 
+static struct gametable othertable[] = {
+	{"canon_fw", "Cannon printer firmware files", init_arch_canon_fw},
+	{"", "", NULL}
+};
+
+
 void help(void) {
 	int i;
-	printf("\n\nAvailable games:\n");
+	printf("\nAvailable games:\n");
 	for (i = 0; gametable[i].game[0]; i++) {
-		printf("%-16s - %s\n", gametable[i].game, gametable[i].description);
+		printf("\t%-16s - %s\n", gametable[i].game, gametable[i].description);
+	}
+	printf("\nOther supportrd archives:\n");
+	for (i = 0; othertable[i].game[0]; i++) {
+		printf("\t%-16s - %s\n", othertable[i].game, othertable[i].description);
 	}
 	printf("\n");
 }
@@ -99,6 +108,22 @@ int main(int argc, char *argv[]) {
 				goto found;
 			}
 		}
+
+		for (int i = 0; othertable[i].game[0]; i++) {
+			if (strcmp(fs->options.game, othertable[i].game) == 0) {
+				ret = generic_initfs();
+				if (ret) {
+					return ret;
+				}
+				syslog(LOG_DEBUG, "Init \"%s\" VFS.\n", othertable[i].description);
+				ret = othertable[i].initgame();
+				if (ret) {
+					return ret;
+				}
+				goto found;
+			}
+		}
+
 		fprintf(stderr, "Unknown game type.\n");
 		return -EINVAL;
 	} else {
