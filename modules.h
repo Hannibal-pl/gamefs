@@ -34,5 +34,6 @@
 #include "mm_snd.h"
 #include "canon_fw.h"
 #include "risen_pak.h"
+#include "anox_dat.h"
 
 #endif

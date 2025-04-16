@@ -28,6 +28,7 @@ static struct fuse_opt gamefs_opts[] = {
 
 static struct gametable gametable[] = {
 	{"as688_mlb", "688 Attack Sub *.mlb files", init_game_as688_mlb},
+	{"anox_dat", "Anachrnoox *.dat", init_game_anox_dat},
 	{"aod_dat", "Anvil of Dawn data files", init_game_aod_dat},
 	{"arc_dat", "Arcanum *.dat files", init_game_arc_dat},
 	{"artifex_cub", "Artifex Mundi Games *.cub files", init_game_artifex_cub},
