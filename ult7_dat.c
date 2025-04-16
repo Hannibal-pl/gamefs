@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "ult7_dat.h"
+#include "generic.h"
 
 int init_game_ult7_dat(void) {
 	unsigned count;

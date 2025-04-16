@@ -5,7 +5,7 @@
 #include <pthread.h>
 #include <syslog.h>
 
-#include "cf_dat.h"
+#include "generic.h"
 
 #define LEAF_COUNT 314
 #define TREE_SIZE ((LEAF_COUNT << 1) - 1)

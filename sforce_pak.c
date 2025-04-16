@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "sforce_pak.h"
+#include "generic.h"
 
 char * strrev(char *str) {
 	char tmp;

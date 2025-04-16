@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "dune2_pak.h"
+#include "generic.h"
 
 int init_game_dune2_pak(void) {
 	char name[13];

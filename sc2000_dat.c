@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "sc2000_dat.h"
+#include "generic.h"
 
 int init_game_sc2000_dat(void) {
 	unsigned count;

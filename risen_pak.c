@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <errno.h>
 
-#include "risen_pak.h"
+#include "generic.h"
 
 int add_dir(struct filenode *pnode, uint32_t count) {
 	uint32_t subcount;

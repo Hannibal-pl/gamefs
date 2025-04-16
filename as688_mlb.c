@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "as688_mlb.h"
+#include "generic.h"
 
 int init_game_as688_mlb(void) {
 	unsigned short count;

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "ss_res.h"
+#include "generic.h"
 
 int init_game_ss_res(void) {
 	short unsigned count;

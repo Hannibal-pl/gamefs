@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "lfosh_lib.h"
+#include "generic.h"
 
 int init_game_lfosh_lib(void) {
 	unsigned short count;

@@ -5,7 +5,7 @@
 #include <pthread.h>
 #include <syslog.h>
 
-#include "fall_dat.h"
+#include "generic.h"
 
 struct filenode **dirs;
 

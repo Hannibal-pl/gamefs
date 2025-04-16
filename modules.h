@@ -1,39 +1,43 @@
 #ifndef __GAMEFS_MOD_H__
 #define __GAMEFS_MOD_H__
 
-#include "mm_vid.h"
-#include "lfosh_lib.h"
-#include "arc_dat.h"
-#include "fall2_dat.h"
-#include "fragall__.h"
-#include "mm_lod.h"
-#include "sc2000_dat.h"
-#include "jagg_dat.h"
-#include "gob_stk.h"
-#include "dune2_pak.h"
-#include "as688_mlb.h"
-#include "cf_dat.h"
-#include "bs_rarc.h"
-#include "tlj_xarc.h"
-#include "toee_dat.h"
-#include "g17_dat.h"
-#include "comm_dir.h"
-#include "ufoamh_vfs.h"
-#include "ja2_slf.h"
-#include "dk_dat.h"
-#include "fall_dat.h"
-#include "gta3_img.h"
-#include "ult7_dat.h"
-#include "aod_dat.h"
-#include "sforce_pak.h"
-#include "nfs4_viv.h"
-#include "ftl_dat.h"
-#include "ta_hapi.h"
-#include "artifex_cub.h"
-#include "fez_pak.h"
-#include "mm_snd.h"
-#include "canon_fw.h"
-#include "risen_pak.h"
-#include "anox_dat.h"
+//Games
+extern int init_game_anox_dat(void);
+extern int init_game_aod_dat(void);
+extern int init_game_arc_dat(void);
+extern int init_game_artifex_cub(void);
+extern int init_game_as688_mlb(void);
+extern int init_game_bs_rarc(void);
+extern int init_game_cf_dat(void);
+extern int init_game_comm_dir(void);
+extern int init_game_dk_dat(void);
+extern int init_game_dune2_pak(void);
+extern int init_game_fall_dat(void);
+extern int init_game_fall2_dat(void);
+extern int init_game_fez_pak(void);
+extern int init_game_fragall__(void);
+extern int init_game_ftl_dat(void);
+extern int init_game_g17_dat(void);
+extern int init_game_gob_stk(void);
+extern int init_game_gta3_img(void);
+extern int init_game_ja2_slf(void);
+extern int init_game_jagg_dat(void);
+extern int init_game_lfosh_lib(void);
+extern int init_game_mm_lod(void);
+extern int init_game_mm_snd(void);
+extern int init_game_mm_vid(void);
+extern int init_game_nfs4_viv(void);
+extern int init_game_risen_pak(void);
+extern int init_game_sc2000_dat(void);
+extern int init_game_sforce_pak(void);
+extern int init_game_ss_res(void);
+extern int init_game_ta_hapi(void);
+extern int init_game_tlj_xarc(void);
+extern int init_game_toee_dat(void);
+extern int init_game_ufoamh_vfs(void);
+extern int init_game_ult7_dat(void);
+
+//Other archives
+extern int init_arch_canon_fw(void);
 
 #endif

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "ja2_slf.h"
+#include "generic.h"
 
 int init_game_ja2_slf(void) {
 	unsigned short count;

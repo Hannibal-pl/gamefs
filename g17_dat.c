@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "g17_dat.h"
+#include "generic.h"
 
 int init_game_g17_dat(void) {
 	unsigned count;

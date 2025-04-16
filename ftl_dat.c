@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "ftl_dat.h"
+#include "generic.h"
 
 int init_game_ftl_dat(void) {
 	unsigned count;

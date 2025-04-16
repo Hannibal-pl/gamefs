@@ -2,9 +2,9 @@
 #include <string.h>
 #include <errno.h>
 
-#include "canon_fw.h"
+#include "generic.h"
 
-int init_game_canon_fw(void) {
+int init_arch_canon_fw(void) {
 	unsigned count;
 	unsigned offset;
 	unsigned skip = 0;

@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <errno.h>
 
-#include "artifex_cub.h"
+#include "generic.h"
 
 int init_game_artifex_cub(void) {
 	bool is64bit = false;

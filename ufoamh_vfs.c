@@ -4,7 +4,7 @@
 #include <errno.h>
 #include <zlib.h>
 
-#include "ufoamh_vfs.h"
+#include "generic.h"
 
 struct private {
 	unsigned cluster_size;

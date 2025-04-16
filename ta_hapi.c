@@ -4,7 +4,7 @@
 #include <errno.h>
 #include <zlib.h>
 
-#include "ta_hapi.h"
+#include "generic.h"
 
 struct private {
 	bool is_encrypted;

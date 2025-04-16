@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "fall2_dat.h"
+#include "generic.h"
 
 int init_game_fall2_dat(void) {
 	unsigned offset;

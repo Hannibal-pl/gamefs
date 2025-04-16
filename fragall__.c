@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "fragall__.h"
+#include "generic.h"
 
 int init_game_fragall__() {
 	unsigned count;

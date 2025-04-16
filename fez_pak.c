@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "fez_pak.h"
+#include "generic.h"
 
 int init_game_fez_pak(void) {
 	unsigned count;

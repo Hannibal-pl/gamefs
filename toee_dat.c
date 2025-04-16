@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "toee_dat.h"
+#include "generic.h"
 
 struct dir {
 	struct filenode *dir;

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "arc_dat.h"
+#include "generic.h"
 
 int init_game_arc_dat(void) {
 	unsigned offset;

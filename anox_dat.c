@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "anox_dat.h"
+#include "generic.h"
 
 int init_game_anox_dat(void) {
 	uint32_t count;

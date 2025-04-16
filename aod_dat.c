@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "aod_dat.h"
+#include "generic.h"
 
 int init_game_aod_dat(void) {
 	unsigned count;

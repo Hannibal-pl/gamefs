@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "dk_dat.h"
+#include "generic.h"
 
 int init_game_dk_dat(void) {
 	unsigned count;

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "bs_rarc.h"
+#include "generic.h"
 
 int init_game_bs_rarc(void) {
 	unsigned count;

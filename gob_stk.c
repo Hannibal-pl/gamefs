@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <pthread.h>
 
-#include "gob_stk.h"
+#include "generic.h"
 
 int gob_stk_uncompress(unsigned char *dest, unsigned unpacked, unsigned char *src) {
 	unsigned char buf[4096];

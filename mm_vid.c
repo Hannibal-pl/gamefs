@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "mm_vid.h"
+#include "generic.h"
 
 int init_game_mm_vid(void) {
 	unsigned count;

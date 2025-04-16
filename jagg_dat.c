@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "jagg_dat.h"
+#include "generic.h"
 
 int init_game_jagg_dat(void) {
 	unsigned short count;

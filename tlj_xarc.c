@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "tlj_xarc.h"
+#include "generic.h"
 
 int init_game_tlj_xarc(void) {
 	unsigned count;
