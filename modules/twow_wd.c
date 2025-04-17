@@ -96,3 +96,7 @@ int init_game_twow_wd(void) {
 	free(unpacked_dir);
 	return 0;
 }
+
+bool detect_game_twow_wd(void) {
+	return false;
+}

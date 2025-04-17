@@ -37,3 +37,12 @@ int init_game_bgate_bif(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_bgate_bif(void) {
+	char magic[8];
+
+	fseek(fs->file, 0, SEEK_SET);
+	fread(magic, 1, sizeof(magic), fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return (memcmp(magic, "BIFFV1  ", 8)) ? false : true;
+}

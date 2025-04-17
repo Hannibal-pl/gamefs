@@ -59,3 +59,7 @@ int init_game_gta3_img(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_gta3_img(void) {
+	return false;
+}

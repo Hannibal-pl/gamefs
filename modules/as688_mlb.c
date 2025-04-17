@@ -36,3 +36,12 @@ int init_game_as688_mlb(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_as688_mlb(void) {
+	uint16_t magic;
+
+	fseek(fs->file, 2, SEEK_SET);
+	fread(&magic, sizeof(uint16_t), 1, fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return (magic == 6) ? true : false;
+}

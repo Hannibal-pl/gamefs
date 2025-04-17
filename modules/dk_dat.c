@@ -42,3 +42,7 @@ int init_game_dk_dat(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_dk_dat(void) {
+	return false;
+}

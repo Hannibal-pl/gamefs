@@ -37,3 +37,13 @@ int init_game_jagg_dat(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_jagg_dat(void) {
+	char name[16];
+
+	fseek(fs->file, 0, SEEK_SET);
+	memset(name, 0, sizeof(name));
+	fread(name, 1, sizeof(name), fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return (strncasecmp(fs->options.file, name, sizeof(name))) ? true : false;
+}

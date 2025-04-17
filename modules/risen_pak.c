@@ -144,3 +144,12 @@ int init_game_risen_pak(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_risen_pak(void) {
+	char magic[4];
+
+	fseek(fs->file, 4, SEEK_SET);
+	fread(magic, 1, sizeof(magic), fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return (memcmp(magic, "G3V0", 4)) ? false : true;
+}

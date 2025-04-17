@@ -142,3 +142,7 @@ int init_game_gob_stk(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_gob_stk(void) {
+	return false;
+}

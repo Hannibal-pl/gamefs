@@ -87,3 +87,24 @@ int init_game_artifex_cub(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_artifex_cub(void) {
+	char magic[8];
+
+	fseek(fs->file, 0, SEEK_SET);
+	fread(magic, 1, sizeof(magic), fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	for (uint32_t i = 0; i < 256; i++) {
+		for (uint32_t j = 0; j < 8; j++) {
+			magic[j] ^= i;
+		}
+		if (!memcmp(magic, "cub\0001.0\000", 8) || !memcmp(magic, "cub\0001.1\000", 8)) {
+			return true;
+		}
+		for (uint32_t j = 0; j < 8; j++) {
+			magic[j] ^= i;
+		}
+	}
+
+	return false;
+}

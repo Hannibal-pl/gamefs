@@ -171,7 +171,7 @@ int init_game_ufoamh_vfs(void) {
 
 	fseek(fs->file, 0, SEEK_SET);
 	fread(magic, sizeof(char), 4, fs->file);
-	if (memcmp(magic, "\0\0\x80\x3F", 2)) {
+	if (memcmp(magic, "\0\0\x80\x3F", 4)) {
 		fprintf(stderr, "Invalid game file.\n");
 		return -EINVAL;
 	}
@@ -210,4 +210,13 @@ int init_game_ufoamh_vfs(void) {
 
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
+}
+
+bool detect_game_ufoamh_vfs(void) {
+	unsigned char magic[4];
+
+	fseek(fs->file, 0, SEEK_SET);
+	fread(magic, sizeof(char), 4, fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return (memcmp(magic, "\0\0\x80\x3F", 4)) ? false : true;
 }

@@ -39,3 +39,12 @@ int init_game_ult7_dat(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_ult7_dat(void) {
+	char magic[40];
+
+	fseek(fs->file, 0, SEEK_SET);
+	fread(magic, 1, sizeof(magic), fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return (memcmp(magic, "Ultima VII Data File (C) 1992 Origin Inc", 40)) ? false : true;
+}

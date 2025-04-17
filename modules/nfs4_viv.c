@@ -64,3 +64,18 @@ int init_game_nfs4_viv(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_nfs4_viv(void) {
+	uint32_t flen;
+	size_t rlen;
+	char magic[4];
+
+	fseek(fs->file, 0, SEEK_SET);
+	fread(magic, 1, sizeof(magic), fs->file);
+	fread(&flen, sizeof(uint32_t), 1, fs->file);
+	fseek(fs->file, 0, SEEK_END);
+	rlen = ftell(fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	flen = be32toh(flen);
+	return ((memcmp(magic, "BIGF", 4) == 0) && (rlen == flen)) ? true : false;
+}

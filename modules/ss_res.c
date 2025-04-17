@@ -58,3 +58,12 @@ int init_game_ss_res(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_ss_res(void) {
+	char magic[16];
+
+	fseek(fs->file, 0, SEEK_SET);
+	fread(magic, 1, sizeof(magic), fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return (memcmp(magic, "LG Res File v2\r\n", 16)) ? false : true;
+}

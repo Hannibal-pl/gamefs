@@ -64,3 +64,12 @@ int init_game_arc_dat(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_arc_dat(void) {
+	char magic[4];
+
+	fseek(fs->file, -12, SEEK_END);
+	fread(magic, sizeof(char), 4, fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return  (memcmp(magic, "1TAD", 4)) ? false : true;
+}

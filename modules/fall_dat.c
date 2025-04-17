@@ -193,3 +193,7 @@ int init_game_fall_dat(void) {
 	free(dirs);
 	return 0;
 }
+
+bool detect_game_fall_dat(void) {
+	return false;
+}

@@ -278,3 +278,7 @@ int init_game_cf_dat(void) {
 	cf_dat_init_offcode();
 	return 0;
 }
+
+bool detect_game_cf_dat(void) {
+	return false;
+}

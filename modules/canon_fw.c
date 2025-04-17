@@ -44,3 +44,12 @@ int init_arch_canon_fw(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_arch_canon_fw(void) {
+	char magic[8];
+
+	fseek(fs->file, -8, SEEK_END);
+	fread(magic, 1, sizeof(magic), fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return  (memcmp(magic, "USTBIND", 7)) ? false : true;
+}

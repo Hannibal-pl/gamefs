@@ -61,3 +61,7 @@ int init_game_comm_dir(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_comm_dir(void) {
+	return false;
+}

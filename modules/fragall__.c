@@ -35,3 +35,11 @@ int init_game_fragall__() {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_fragall__() {
+	char name[16];
+
+	fseek(fs->file, 0, SEEK_SET);
+	fread(name, 1, sizeof(name), fs->file);
+	return (strncmp(fs->options.file, name, sizeof(name))) ? false : true;
+}

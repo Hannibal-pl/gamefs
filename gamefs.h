@@ -80,6 +80,7 @@ struct gametable {
 	char game[MAX_GAMETYPE];
 	char description[MAX_DESC];
 	int (*initgame)(void);
+	bool (*autodetect)(void);
 };
 
 extern struct filesystem *fs;

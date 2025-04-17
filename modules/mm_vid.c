@@ -42,3 +42,8 @@ int init_game_mm_vid(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_mm_vid(void) {
+	return false;
+}
+

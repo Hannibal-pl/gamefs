@@ -36,3 +36,7 @@ int init_game_sc2000_dat(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_sc2000_dat(void) {
+	return false;
+}

@@ -47,3 +47,13 @@ int init_game_ja2_slf(void) {
 	fs->fs_size = generic_subtree_size(fs->root);
 	return 0;
 }
+
+bool detect_game_ja2_slf(void) {
+	char path[257];
+
+	fseek(fs->file, 0, SEEK_SET);
+	memset(path, 0, sizeof(path));
+	fread(path, 1, sizeof(path) - 1, fs->file);
+	fseek(fs->file, 0, SEEK_SET);
+	return (strcasestr(path, fs->options.file)) ? true : false;
+}
