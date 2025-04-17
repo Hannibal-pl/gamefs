@@ -9,6 +9,7 @@
 #include "modules.h"
 
 #define GAMEFS_OPT_KEY(t, p, v) { t, offsetof(struct options, p), v }
+#define GAMETABLE_SPACER	"SpAcEr"
 
 enum {
 	KEY_VERSION,
@@ -65,12 +66,9 @@ static struct gametable gametable[] = {
 	{"ufoamh_vfs", "UFO Aftermath *.vgs files", init_game_ufoamh_vfs, detect_game_ufoamh_vfs},
 	{"ult7_dat", "Ultima 7 data files", init_game_ult7_dat, detect_game_ult7_dat},
 	{"xeno_pfp", "Xenonauts *pfp files", init_game_xeno_pfp, detect_game_xeno_pfp},
-	{"", "", NULL}
-};
-
-static struct gametable othertable[] = {
+	{GAMETABLE_SPACER, GAMETABLE_SPACER, NULL, NULL},
 	{"canon_fw", "Cannon printer firmware files", init_arch_canon_fw, detect_arch_canon_fw},
-	{"", "", NULL}
+	{"", "", NULL, NULL}
 };
 
 
@@ -78,11 +76,11 @@ void help(void) {
 	int i;
 	printf("\nAvailable games:\n");
 	for (i = 0; gametable[i].game[0]; i++) {
+		if (strcmp(GAMETABLE_SPACER, gametable[i].game) == 0) {
+			printf("\nOther supported archives:\n");
+			continue;
+		}
 		printf("\t%-16s - %s\n", gametable[i].game, gametable[i].description);
-	}
-	printf("\nOther supportrd archives:\n");
-	for (i = 0; othertable[i].game[0]; i++) {
-		printf("\t%-16s - %s\n", othertable[i].game, othertable[i].description);
 	}
 	printf("\n");
 }
@@ -99,6 +97,10 @@ int main(int argc, char *argv[]) {
 
 	if (fs->options.game) {
 		for (int i = 0; gametable[i].game[0]; i++) {
+			if (strcmp(GAMETABLE_SPACER, gametable[i].game) == 0) {
+				continue;
+			}
+
 			if (strcmp(fs->options.game, gametable[i].game) == 0) {
 				ret = generic_initfs();
 				if (ret) {
@@ -106,21 +108,6 @@ int main(int argc, char *argv[]) {
 				}
 				syslog(LOG_DEBUG, "Init \"%s\" VFS.\n", gametable[i].description);
 				ret = gametable[i].initgame();
-				if (ret) {
-					return ret;
-				}
-				goto found;
-			}
-		}
-
-		for (int i = 0; othertable[i].game[0]; i++) {
-			if (strcmp(fs->options.game, othertable[i].game) == 0) {
-				ret = generic_initfs();
-				if (ret) {
-					return ret;
-				}
-				syslog(LOG_DEBUG, "Init \"%s\" VFS.\n", othertable[i].description);
-				ret = othertable[i].initgame();
 				if (ret) {
 					return ret;
 				}
