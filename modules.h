@@ -12,6 +12,7 @@ extern int init_game_bs_rarc(void);
 extern int init_game_cf_dat(void);
 extern int init_game_comm_dir(void);
 extern int init_game_dk_dat(void);
+extern int init_game_duke3d_grp(void);
 extern int init_game_dune2_pak(void);
 extern int init_game_fall_dat(void);
 extern int init_game_fall2_dat(void);

@@ -35,6 +35,7 @@ static struct gametable gametable[] = {
 	{"bs_rarc", "Broken Sword Director's Cut RARC *.dat files", init_game_bs_rarc},
 	{"cf_dat", "Cannon Fodder *.dat files", init_game_cf_dat},
 	{"comm_dir", "Commandos *.dir files", init_game_comm_dir},
+	{"duke3d_grp", "Duke3D *.grp file", init_game_duke3d_grp},
 	{"dune2_pak", "Dune 2 *.pak files", init_game_dune2_pak},
 	{"dk_dat", "Dungeon Keeper *.dat files", init_game_dk_dat},
 	{"fall_dat", "Fallout *.dat files", init_game_fall_dat},
