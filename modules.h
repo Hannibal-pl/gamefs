@@ -34,6 +34,7 @@ extern int init_game_ss_res(void);
 extern int init_game_ta_hapi(void);
 extern int init_game_tlj_xarc(void);
 extern int init_game_toee_dat(void);
+extern int init_game_twow_wd(void);
 extern int init_game_ufoamh_vfs(void);
 extern int init_game_ult7_dat(void);
 

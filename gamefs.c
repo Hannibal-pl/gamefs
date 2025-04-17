@@ -58,6 +58,7 @@ static struct gametable gametable[] = {
 	{"ta_hapi", "Total Anihilation HAPI files", init_game_ta_hapi},
 	{"toee_dat", "Temple Of Elemental Evil *.dat files", init_game_toee_dat},
 	{"tlj_xarc", "The Longest Journey *.xarc files", init_game_tlj_xarc},
+	{"twow_wd", "Two Worlds *.wd files", init_game_twow_wd},
 	{"ufoamh_vfs", "UFO Aftermath *.vgs files", init_game_ufoamh_vfs},
 	{"ult7_dat", "Ultima 7 data files", init_game_ult7_dat},
 	{"", "", NULL}
