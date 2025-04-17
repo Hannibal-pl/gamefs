@@ -31,6 +31,7 @@ static struct gametable gametable[] = {
 	{"aod_dat", "Anvil of Dawn data files", init_game_aod_dat},
 	{"arc_dat", "Arcanum *.dat files", init_game_arc_dat},
 	{"artifex_cub", "Artifex Mundi Games *.cub files", init_game_artifex_cub},
+	{"bgate_bif", "Baldurs Gate *.bif files", init_game_bgate_bif},
 	{"bs_rarc", "Broken Sword Director's Cut RARC *.dat files", init_game_bs_rarc},
 	{"cf_dat", "Cannon Fodder *.dat files", init_game_cf_dat},
 	{"comm_dir", "Commandos *.dir files", init_game_comm_dir},
@@ -44,6 +45,7 @@ static struct gametable gametable[] = {
 	{"gob_stk", "Goblins 1,2,3 & Geisha *.stk files", init_game_gob_stk},
 	{"g17_dat", "Gorky 17 *.dat files", init_game_g17_dat},
 	{"gta3_img", "Grand Theft Auto 3 *.[img|dir] files pair", init_game_gta3_img},
+	{"hotmi_wad", "Hotline Miami *wad file", init_game_hotmi_wad},
 	{"jagg_dat", "Jagged Alliance *.dat files", init_game_jagg_dat},
 	{"ja2_slf", "Jagged Alliance *.slf files", init_game_ja2_slf},
 	{"lfosh_lib", "Lost Files of Sherlock Holmes *.lib files", init_game_lfosh_lib},
@@ -61,6 +63,7 @@ static struct gametable gametable[] = {
 	{"twow_wd", "Two Worlds *.wd files", init_game_twow_wd},
 	{"ufoamh_vfs", "UFO Aftermath *.vgs files", init_game_ufoamh_vfs},
 	{"ult7_dat", "Ultima 7 data files", init_game_ult7_dat},
+	{"xeno_pfp", "Xenonauts *pfp files", init_game_xeno_pfp},
 	{"", "", NULL}
 };
 

@@ -7,6 +7,7 @@ extern int init_game_aod_dat(void);
 extern int init_game_arc_dat(void);
 extern int init_game_artifex_cub(void);
 extern int init_game_as688_mlb(void);
+extern int init_game_bgate_bif(void);
 extern int init_game_bs_rarc(void);
 extern int init_game_cf_dat(void);
 extern int init_game_comm_dir(void);
@@ -20,6 +21,7 @@ extern int init_game_ftl_dat(void);
 extern int init_game_g17_dat(void);
 extern int init_game_gob_stk(void);
 extern int init_game_gta3_img(void);
+extern int init_game_hotmi_wad(void);
 extern int init_game_ja2_slf(void);
 extern int init_game_jagg_dat(void);
 extern int init_game_lfosh_lib(void);
@@ -37,6 +39,7 @@ extern int init_game_toee_dat(void);
 extern int init_game_twow_wd(void);
 extern int init_game_ufoamh_vfs(void);
 extern int init_game_ult7_dat(void);
+extern int init_game_xeno_pfp(void);
 
 //Other archives
 extern int init_arch_canon_fw(void);

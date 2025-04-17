@@ -58,7 +58,6 @@ int init_game_twow_wd(void) {
 			continue;
 		}*/
 
-		fprintf(stderr, "%s %hhi %hi\n", name, flag, count);
 		node = generic_add_path(fs->root, name, FILETYPE_PACKED);
 		if (!node) {
 			fprintf(stderr, "Error adding file desciption to library.\n");
