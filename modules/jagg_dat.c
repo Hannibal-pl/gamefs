@@ -45,5 +45,5 @@ bool detect_game_jagg_dat(void) {
 	memset(name, 0, sizeof(name));
 	fread(name, 1, sizeof(name), fs->file);
 	fseek(fs->file, 0, SEEK_SET);
-	return (strncasecmp(fs->options.file, name, sizeof(name))) ? true : false;
+	return (strncasecmp(fs->options.file, name, sizeof(name))) ? false : true;
 }

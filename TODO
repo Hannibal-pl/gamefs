@@ -1,6 +1,5 @@
 - Add more archive types.
 - Improve already implemented, especially decompression.
-- Game type autodetect when possible
 - Modular design
 - ? Add duplicates to lost+found
 - 64bit internal structures

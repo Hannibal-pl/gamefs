@@ -8,7 +8,8 @@
 #include "gamefs.h"
 #include "modules.h"
 
-#define GAMEFS_OPT_KEY(t, p, v) { t, offsetof(struct options, p), v }
+#define GAMEFS_OPT_KEY(t, p, v)	{ t, offsetof(struct options, p), v }
+#define ARRAY_SIZE(x)		(sizeof((x))/sizeof((x)[0]))
 #define GAMETABLE_SPACER	"SpAcEr"
 
 enum {
@@ -82,11 +83,23 @@ void help(void) {
 		}
 		printf("\t%-16s - %s\n", gametable[i].game, gametable[i].description);
 	}
+	printf("\nOr use `autodetect` for attempt to auto recognize.\n");
 	printf("\n");
+}
+
+uint32_t autodetect(uint32_t starti) {
+	for (uint32_t i = starti; i < ARRAY_SIZE(gametable) - 1; i++) {
+		if ((gametable[i].autodetect != NULL) && gametable[i].autodetect()) {
+			return i;
+		}
+	}
+
+	return 0xFFFFFFFF;
 }
 
 int main(int argc, char *argv[]) {
 	int ret;
+	uint32_t match = 0xFFFFFFFF;
 	struct fuse_args args = FUSE_ARGS_INIT(argc, argv);
 
 	openlog("GAMETOOL FUSE", 0, LOG_USER);
@@ -96,18 +109,46 @@ int main(int argc, char *argv[]) {
 		return -1;
 
 	if (fs->options.game) {
+		if (strcmp(fs->options.game, "autodetect") == 0) {
+			uint32_t matches = 0;
+
+			printf("\nTrying to autodetect archive type...\n");
+
+			ret = generic_initfs();
+			if (ret) {
+				return ret;
+			}
+
+			for (uint32_t i = 0; i < ARRAY_SIZE(gametable) - 1;) {
+				uint32_t lmatch = autodetect(i);
+				if (lmatch != 0xFFFFFFFF) {
+					printf("Match found: %s (%s)\n", gametable[lmatch].game, gametable[lmatch].description);
+					matches++;
+					match = lmatch;
+					i = lmatch + 1;
+				} else {
+					break;
+				}
+			}
+
+			if (matches == 1) {
+				goto found;
+			}
+
+			printf("\nNone or more than one match found. Exiting\n");
+			generic_closefs();
+			return -1;
+		}
+
 		for (int i = 0; gametable[i].game[0]; i++) {
 			if (strcmp(GAMETABLE_SPACER, gametable[i].game) == 0) {
 				continue;
 			}
 
 			if (strcmp(fs->options.game, gametable[i].game) == 0) {
+				match = i;
+
 				ret = generic_initfs();
-				if (ret) {
-					return ret;
-				}
-				syslog(LOG_DEBUG, "Init \"%s\" VFS.\n", gametable[i].description);
-				ret = gametable[i].initgame();
 				if (ret) {
 					return ret;
 				}
@@ -125,6 +166,14 @@ int main(int argc, char *argv[]) {
 	}
 
 found:
+	fprintf(stderr, "MATCH %i\n", match);
+
+	syslog(LOG_DEBUG, "Init \"%s\" VFS.\n", gametable[match].description);
+	ret = gametable[match].initgame();
+	if (ret) {
+		return ret;
+	}
+
 	generic_print_tree(fs->root, 0);
 
 	ret = fuse_main(args.argc, args.argv, &fs->operations, NULL);
