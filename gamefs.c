@@ -52,6 +52,7 @@ static struct gametable gametable[] = {
 	{"jagg_dat", "Jagged Alliance *.dat files", init_game_jagg_dat, detect_game_jagg_dat},
 	{"ja2_slf", "Jagged Alliance *.slf files", init_game_ja2_slf, detect_game_ja2_slf},
 	{"lfosh_lib", "Lost Files of Sherlock Holmes *.lib files", init_game_lfosh_lib, detect_game_lfosh_lib},
+	{"mm_hwl", "Might&Magic VII-VIII *.hwl files", init_game_mm_hwl, detect_game_mm_hwl},
 	{"mm_lod", "Might&Magic VI-VIII *.lod files", init_game_mm_lod, detect_game_mm_lod},
 	{"mm_snd", "Might&Magic VI-VIII *.snd files", init_game_mm_snd, detect_game_mm_snd},
 	{"mm_vid", "Might&Magic VI-VIII *.vid files", init_game_mm_vid, detect_game_mm_vid},
@@ -166,7 +167,7 @@ int main(int argc, char *argv[]) {
 	}
 
 found:
-	fprintf(stderr, "MATCH %i\n", match);
+//	fprintf(stderr, "MATCH %i\n", match);
 
 	syslog(LOG_DEBUG, "Init \"%s\" VFS.\n", gametable[match].description);
 	ret = gametable[match].initgame();

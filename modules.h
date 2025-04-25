@@ -74,6 +74,9 @@ extern bool detect_game_jagg_dat(void);
 extern int init_game_lfosh_lib(void);
 extern bool detect_game_lfosh_lib(void);
 
+extern int init_game_mm_hwl(void);
+extern bool detect_game_mm_hwl(void);
+
 extern int init_game_mm_lod(void);
 extern bool detect_game_mm_lod(void);
 
