@@ -25,8 +25,6 @@ int init_arch_elwo_res(void) {
 	for (uint32_t i = 0; i < count; i++) {
 		memset(name, 0, sizeof(name));
 		fread(name, 1, sizeof(name), fs->file);
-		fprintf(stderr, "%s\n", name);
-
 		node = generic_add_file(fs->root, name, FILETYPE_REGULAR);
 		if (!node) {
 			fprintf(stderr, "Error adding file desciption to library.\n");

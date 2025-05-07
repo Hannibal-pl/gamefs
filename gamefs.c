@@ -51,6 +51,7 @@ static struct gametable gametable[] = {
 	{"gob_stk", "Goblins 1,2,3 & Geisha *.stk files", init_game_gob_stk, detect_game_gob_stk},
 	{"g17_dat", "Gorky 17 *.dat files", init_game_g17_dat, detect_game_g17_dat},
 	{"gta3_img", "Grand Theft Auto 3 *.[img|dir] files pair", init_game_gta3_img, detect_game_gta3_img},
+	{"h3_lod", "Heroes of M&M 3 *.lod file", init_game_h3_lod, detect_game_h3_lod},
 	{"hotmi_wad", "Hotline Miami *.wad file", init_game_hotmi_wad, detect_game_hotmi_wad},
 	{"jagg_dat", "Jagged Alliance *.dat files", init_game_jagg_dat, detect_game_jagg_dat},
 	{"ja2_slf", "Jagged Alliance *.slf files", init_game_ja2_slf, detect_game_ja2_slf},

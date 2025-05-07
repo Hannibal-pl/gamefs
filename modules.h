@@ -71,6 +71,9 @@ extern bool detect_game_gob_stk(void);
 extern int init_game_gta3_img(void);
 extern bool detect_game_gta3_img(void);
 
+extern int init_game_h3_lod(void);
+extern bool detect_game_h3_lod(void);
+
 extern int init_game_hotmi_wad(void);
 extern bool detect_game_hotmi_wad(void);
 
