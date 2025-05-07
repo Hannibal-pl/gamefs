@@ -33,10 +33,13 @@ static struct gametable gametable[] = {
 	{"aod_dat", "Anvil of Dawn data files", init_game_aod_dat, detect_game_aod_dat},
 	{"arc_dat", "Arcanum *.dat files", init_game_arc_dat, detect_game_arc_dat},
 	{"artifex_cub", "Artifex Mundi Games *.cub files", init_game_artifex_cub, detect_game_artifex_cub},
+	{"bards_gob", "The Bard's Tale *.gob files", init_game_bards_gob, detect_game_bards_gob},
+	{"bards_lmp", "The Bard's Tale *.lmp files", init_game_bards_lmp, detect_game_bards_lmp},
 	{"bgate_bif", "Baldurs Gate *.bif files", init_game_bgate_bif, detect_game_bgate_bif},
 	{"bs_rarc", "Broken Sword Director's Cut RARC *.dat files", init_game_bs_rarc, detect_game_bs_rarc},
 	{"cf_dat", "Cannon Fodder *.dat files", init_game_cf_dat, detect_game_cf_dat},
 	{"comm_dir", "Commandos *.dir files", init_game_comm_dir, detect_game_comm_dir},
+	{"doom_wad", "Doom engine *.wad files", init_game_doom_wad, detect_game_doom_wad},
 	{"duke3d_grp", "Duke3D *.grp file", init_game_duke3d_grp, detect_game_duke3d_grp},
 	{"dune2_pak", "Dune 2 *.pak files", init_game_dune2_pak, detect_game_dune2_pak},
 	{"dk_dat", "Dungeon Keeper *.dat files", init_game_dk_dat, detect_game_dk_dat},
@@ -48,7 +51,7 @@ static struct gametable gametable[] = {
 	{"gob_stk", "Goblins 1,2,3 & Geisha *.stk files", init_game_gob_stk, detect_game_gob_stk},
 	{"g17_dat", "Gorky 17 *.dat files", init_game_g17_dat, detect_game_g17_dat},
 	{"gta3_img", "Grand Theft Auto 3 *.[img|dir] files pair", init_game_gta3_img, detect_game_gta3_img},
-	{"hotmi_wad", "Hotline Miami *wad file", init_game_hotmi_wad, detect_game_hotmi_wad},
+	{"hotmi_wad", "Hotline Miami *.wad file", init_game_hotmi_wad, detect_game_hotmi_wad},
 	{"jagg_dat", "Jagged Alliance *.dat files", init_game_jagg_dat, detect_game_jagg_dat},
 	{"ja2_slf", "Jagged Alliance *.slf files", init_game_ja2_slf, detect_game_ja2_slf},
 	{"lfosh_lib", "Lost Files of Sherlock Holmes *.lib files", init_game_lfosh_lib, detect_game_lfosh_lib},
@@ -70,6 +73,7 @@ static struct gametable gametable[] = {
 	{"xeno_pfp", "Xenonauts *pfp files", init_game_xeno_pfp, detect_game_xeno_pfp},
 	{GAMETABLE_SPACER, GAMETABLE_SPACER, NULL, NULL},
 	{"canon_fw", "Cannon printer firmware files", init_arch_canon_fw, detect_arch_canon_fw},
+	{"elwo_res", "Electronic Workbench 4 *.res, *.ewx files", init_arch_elwo_res, detect_arch_elwo_res},
 	{"", "", NULL, NULL}
 };
 

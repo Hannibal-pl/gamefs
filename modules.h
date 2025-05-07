@@ -17,6 +17,12 @@ extern bool detect_game_artifex_cub(void);
 extern int init_game_as688_mlb(void);
 extern bool detect_game_as688_mlb(void);
 
+extern int init_game_bards_lmp(void);
+extern bool detect_game_bards_lmp(void);
+
+extern int init_game_bards_gob(void);
+extern bool detect_game_bards_gob(void);
+
 extern int init_game_bgate_bif(void);
 extern bool detect_game_bgate_bif(void);
 
@@ -31,6 +37,9 @@ extern bool detect_game_comm_dir(void);
 
 extern int init_game_dk_dat(void);
 extern bool detect_game_dk_dat(void);
+
+extern int init_game_doom_wad(void);
+extern bool detect_game_doom_wad(void);
 
 extern int init_game_duke3d_grp(void);
 extern bool detect_game_duke3d_grp(void);
@@ -125,5 +134,8 @@ extern bool detect_game_xeno_pfp(void);
 //Other archives
 extern int init_arch_canon_fw(void);
 extern bool detect_arch_canon_fw(void);
+
+extern int init_arch_elwo_res(void);
+extern bool detect_arch_elwo_res(void);
 
 #endif
