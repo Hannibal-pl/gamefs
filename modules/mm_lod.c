@@ -7,13 +7,13 @@
 int init_game_mm_lod(void) {
 	unsigned count;
 	unsigned offset;
-	char magic[4];
+	char magic[8];
 	char name[16];
 	struct filenode *node, *pnode;
 
 	fseek(fs->file, 0, SEEK_SET);
 	fread(magic, 1, sizeof(magic), fs->file);
-	if (memcmp(magic, "LOD\x00", 4)) {
+	if (memcmp(magic, "LOD\x00MMVI", 8) && memcmp(magic, "LOD\x00Game", 8)) {
 		fprintf(stderr, "Invalid game file.\n");
 		return -EINVAL;
 	}
@@ -55,10 +55,10 @@ int init_game_mm_lod(void) {
 }
 
 bool detect_game_mm_lod(void) {
-	char magic[4];
+	char magic[8];
 
 	fseek(fs->file, 0, SEEK_SET);
 	fread(magic, 1, sizeof(magic), fs->file);
 	fseek(fs->file, 0, SEEK_SET);
-	return (memcmp(magic, "LOD\x00", 4)) ? false : true;
+	return (memcmp(magic, "LOD\x00MMVI", 8) && memcmp(magic, "LOD\x00Game", 8)) ? false : true;
 }
