@@ -13,3 +13,5 @@
 
  - twow_wd flags > 0x2B handling is most likely wrong. There must be way to
    better handling directory entries after those.
+
+ - nolf_rez filetime is probably wrong

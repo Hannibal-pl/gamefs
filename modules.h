@@ -101,6 +101,9 @@ extern bool detect_game_mm_vid(void);
 extern int init_game_nfs4_viv(void);
 extern bool detect_game_nfs4_viv(void);
 
+extern int init_game_nolf_rez(void);
+extern bool detect_game_nolf_rez(void);
+
 extern int init_game_risen_pak(void);
 extern bool detect_game_risen_pak(void);
 
