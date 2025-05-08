@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <time.h>
 #include <fuse.h>
 #include <fuse_opt.h>
 
@@ -118,5 +119,6 @@ extern void generic_closefs(void);
 extern void pathDosToUnix(char *path, uint32_t len);
 extern void strrev(char *str, uint32_t len);
 extern bool unpackSizeless(uint8_t *in, uint32_t insize, uint8_t **out, uint32_t *outsize);
+extern time_t fatTime(uint32_t val);
 
 #endif
