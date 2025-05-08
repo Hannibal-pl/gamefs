@@ -35,6 +35,9 @@ extern bool detect_game_cf_dat(void);
 extern int init_game_comm_dir(void);
 extern bool detect_game_comm_dir(void);
 
+extern int init_game_dk2_wad(void);
+extern bool detect_game_dk2_wad(void);
+
 extern int init_game_dk_dat(void);
 extern bool detect_game_dk_dat(void);
 

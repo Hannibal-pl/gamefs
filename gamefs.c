@@ -43,6 +43,7 @@ static struct gametable gametable[] = {
 	{"duke3d_grp", "Duke3D *.grp file", init_game_duke3d_grp, detect_game_duke3d_grp},
 	{"dune2_pak", "Dune 2 *.pak files", init_game_dune2_pak, detect_game_dune2_pak},
 	{"dk_dat", "Dungeon Keeper *.dat files", init_game_dk_dat, detect_game_dk_dat},
+	{"dk2_dat", "Dungeon Keeper 2 *.wad files", init_game_dk2_wad, detect_game_dk2_wad},
 	{"fall_dat", "Fallout *.dat files", init_game_fall_dat, detect_game_fall_dat},
 	{"fall2_dat", "Fallout 2 *.dat files", init_game_fall2_dat, detect_game_fall2_dat},
 	{"fez_pak", "Fez *.pak files", init_game_fez_pak, detect_game_fez_pak},
