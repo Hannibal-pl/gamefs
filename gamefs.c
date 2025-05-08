@@ -90,7 +90,7 @@ void help(void) {
 		}
 		printf("\t%-16s - %s\n", gametable[i].game, gametable[i].description);
 	}
-	printf("\nOr use `autodetect` for attempt to auto recognize.\n");
+	printf("\nOr use `auto` for attempt to autodetect archive type.\n");
 	printf("\n");
 }
 
@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
 		return -1;
 
 	if (fs->options.game) {
-		if (strcmp(fs->options.game, "autodetect") == 0) {
+		if (strcmp(fs->options.game, "auto") == 0) {
 			uint32_t matches = 0;
 
 			printf("\nTrying to autodetect archive type...\n");
