@@ -5,6 +5,7 @@
 
 #include "../gamefs.h"
 
+
 int init_game_xbf_dat(void) {
 	uint32_t dsize;
 	uint32_t size;
@@ -27,11 +28,17 @@ int init_game_xbf_dat(void) {
 	filename[len - 2] = 'A';
 	filename[len - 1] = 'T';
 	fdir = fopen(filename, "r");
-	free(filename);
 	if (!fdir) {
-		fprintf(stderr, "Directory file not found.\n");
-		errno = -EINVAL;
-		return -EINVAL;
+		filename[len - 3] = 'c';
+		filename[len - 2] = 'a';
+		filename[len - 1] = 't';
+		fdir = fopen(filename, "r");
+		free(filename);
+		if (!fdir) {
+			fprintf(stderr, "Directory file not found.\n");
+			errno = -EINVAL;
+			return -EINVAL;
+		}
 	}
 
 	fseek(fdir, 0, SEEK_END);
@@ -63,12 +70,12 @@ int init_game_xbf_dat(void) {
 		return -EINVAL;
 	}
 
-	if (strcasecmp(basename(fs->options.file), dir)) {
-		free(dir);
-		fprintf(stderr, "Name mismatch.\n");
-		errno = -EINVAL;
-		return -EINVAL;
-	}
+//	if (strcasecmp(basename(fs->options.file), dir)) {
+//		free(dir);
+//		fprintf(stderr, "Name mismatch.\n");
+//		errno = -EINVAL;
+//		return -EINVAL;
+//	}
 
 	count--; // omit header
 	for (uint32_t i = 0, j = 0; i < count; i++) {
@@ -77,6 +84,7 @@ int init_game_xbf_dat(void) {
 
 		memset(name, 0, sizeof(name));
 		sscanf(&dir[j], "%s %u", name, &size);
+		pathDosToUnix(name, strlen(name));
 
 		node = generic_add_path(fs->root, name, FILETYPE_REGULAR);
 		if (!node) {
