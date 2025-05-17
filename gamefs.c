@@ -73,6 +73,7 @@ static struct gametable gametable[] = {
 	{"twow_wd", "Two Worlds *.wd files", init_game_twow_wd, detect_game_twow_wd},
 	{"ufoamh_vfs", "UFO Aftermath *.vgs files", init_game_ufoamh_vfs, detect_game_ufoamh_vfs},
 	{"ult7_dat", "Ultima 7 data files", init_game_ult7_dat, detect_game_ult7_dat},
+	{"xbf_dat", "X-Beyond the Frontier *[cat|dat] file pair", init_game_xbf_dat, detect_game_xbf_dat},
 	{"xeno_pfp", "Xenonauts *pfp files", init_game_xeno_pfp, detect_game_xeno_pfp},
 	{GAMETABLE_SPACER, GAMETABLE_SPACER, NULL, NULL},
 	{"canon_fw", "Cannon printer firmware files", init_arch_canon_fw, detect_arch_canon_fw},

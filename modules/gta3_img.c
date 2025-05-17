@@ -24,7 +24,7 @@ int init_game_gta3_img(void) {
 	filename[len - 3] = 'd';
 	filename[len - 2] = 'i';
 	filename[len - 1] = 'r';
-	dir = fopen(filename, "rw");
+	dir = fopen(filename, "r");
 	free(filename);
 	if (!dir) {
 		fprintf(stderr, "Directory file not found.\n");

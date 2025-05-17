@@ -140,6 +140,9 @@ extern bool detect_game_ult7_dat(void);
 extern int init_game_xeno_pfp(void);
 extern bool detect_game_xeno_pfp(void);
 
+extern int init_game_xbf_dat(void);
+extern bool detect_game_xbf_dat(void);
+
 //Other archives
 extern int init_arch_canon_fw(void);
 extern bool detect_arch_canon_fw(void);
