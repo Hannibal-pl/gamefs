@@ -128,6 +128,9 @@ extern bool detect_game_tlj_xarc(void);
 extern int init_game_toee_dat(void);
 extern bool detect_game_toee_dat(void);
 
+extern int init_game_tri2_fbq(void);
+extern bool detect_game_tri2_fbq(void);
+
 extern int init_game_twow_wd(void);
 extern bool detect_game_twow_wd(void);
 

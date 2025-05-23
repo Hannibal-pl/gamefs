@@ -70,6 +70,7 @@ static struct gametable gametable[] = {
 	{"ta_hapi", "Total Anihilation HAPI files", init_game_ta_hapi, detect_game_ta_hapi},
 	{"toee_dat", "Temple Of Elemental Evil *.dat files", init_game_toee_dat, detect_game_toee_dat},
 	{"tlj_xarc", "The Longest Journey *.xarc files", init_game_tlj_xarc, detect_game_tlj_xarc},
+	{"tri2_fbq", "Trine 2 *.fbq files", init_game_tri2_fbq, detect_game_tri2_fbq},
 	{"twow_wd", "Two Worlds *.wd files", init_game_twow_wd, detect_game_twow_wd},
 	{"ufoamh_vfs", "UFO Aftermath *.vgs files", init_game_ufoamh_vfs, detect_game_ufoamh_vfs},
 	{"ult7_dat", "Ultima 7 data files", init_game_ult7_dat, detect_game_ult7_dat},
