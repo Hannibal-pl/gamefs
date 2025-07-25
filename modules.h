@@ -147,6 +147,9 @@ extern int init_game_xbf_dat(void);
 extern bool detect_game_xbf_dat(void);
 
 //Other archives
+extern int init_arch_afi_fw(void);
+extern bool detect_arch_afi_fw(void);
+
 extern int init_arch_canon_fw(void);
 extern bool detect_arch_canon_fw(void);
 

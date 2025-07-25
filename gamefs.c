@@ -77,6 +77,7 @@ static struct gametable gametable[] = {
 	{"xbf_dat", "X-Beyond the Frontier 1&3 *[cat|dat] file pairs", init_game_xbf_dat, detect_game_xbf_dat},
 	{"xeno_pfp", "Xenonauts *pfp files", init_game_xeno_pfp, detect_game_xeno_pfp},
 	{GAMETABLE_SPACER, GAMETABLE_SPACER, NULL, NULL},
+	{"afi_fw", "Actions Semicondutor chips firmware files", init_arch_afi_fw, detect_arch_afi_fw},
 	{"canon_fw", "Cannon printer firmware files", init_arch_canon_fw, detect_arch_canon_fw},
 	{"elwo_res", "Electronic Workbench 4 *.res, *.ewx files", init_arch_elwo_res, detect_arch_elwo_res},
 	{"", "", NULL, NULL}
