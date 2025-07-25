@@ -86,6 +86,10 @@ int init_arch_afi_fw(void) {
 
 				node = generic_add_path(fwdir, fname, FILETYPE_REGULAR);
 				if (!node) {
+					if (errno == -EEXIST) { //ignore duplicates
+						fseek(fs->file, 21, SEEK_CUR);
+						continue;
+					}
 					fprintf(stderr, "Error adding file desciption to library.\n");
 					return errno;
 				}
