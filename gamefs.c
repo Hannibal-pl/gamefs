@@ -63,7 +63,7 @@ static struct gametable gametable[] = {
 	{"mm_vid", "Might&Magic VI-VIII *.vid files", init_game_mm_vid, detect_game_mm_vid},
 	{"nfs4_viv", "Need for Speed 4 *.viv files", init_game_nfs4_viv, detect_game_nfs4_viv},
 	{"nolf_rez", "No One Lives Forever 1&2 *.rez files", init_game_nolf_rez, detect_game_nolf_rez},
-	{"risen_pak", "Risen *.pak files", init_game_risen_pak, detect_game_risen_pak},
+	{"risen_pak", "Risen 1&2 *.pak files", init_game_risen_pak, detect_game_risen_pak},
 	{"sc2000_dat", "SimCity 2000 *.dat files", init_game_sc2000_dat, detect_game_sc2000_dat},
 	{"sforce_pak", "Spellforce *.pak files", init_game_sforce_pak, detect_game_sforce_pak},
 	{"ss_res", "System Shock *.res files", init_game_ss_res, detect_game_ss_res},
